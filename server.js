@@ -3,7 +3,8 @@ const bodyParser = require('body-parser')
 
 const app = express();
 app.use(bodyParser.json()); // for parsing application/json
-const HTTP_PORT = 8099
+const HTTP_PORT = 8099;
+const mockups = require('./mockups.js');
 
 app.post( '/api/alwaysok', ( req, res ) => {
     res.json( {message: 'everything is all right'}
@@ -49,6 +50,24 @@ app.post( '/api/wysiwyg', ( req, res ) => {
 } )
 
 
+//Mockups
+app.post( '/api/mockups/:mock', ( req, res ) => {
+    console.log(mockups)
+    if(mockups&&req.params.mock&&(typeof mockups[req.params.mock]!='undefined')){
+        res.json(mockups[req.params.mock])
+    }else{
+        res.status(404).json({ info: 'no such mockup availlable' });
+    }
+} )
+app.get( '/api/mockups/:mock', ( req, res ) => {
+    console.log(mockups)
+    if(mockups&&req.params.mock&&(typeof mockups[req.params.mock]!='undefined')){
+        res.json(mockups[req.params.mock])
+    }else{
+        res.status(404).json({ info: 'no such mockup availlable' });
+    }
+} )
+
 app.post( '/api/choosestatus/:status', ( req, res ) => {
 
     res.status(req.params.status).json({ info: 'message' });
@@ -58,6 +77,24 @@ app.get( '/api/choosestatus/:status', ( req, res ) => {
     res.status(req.params.status).json({ info: 'message' });
 } )
 
+app.post( '/api/slow/:time*?', ( req, res ) => {
+    req.params.time ? temp = req.params.time : temp = 10;
+    setTimeout(function(){
+        res.json( {message: 'everything is all right'}
+            )
+
+    },temp*1000)
+    
+} )
+app.get( '/api/slow/:time*?', ( req, res ) => {
+    req.params.time ? temp = req.params.time : temp = 10;
+    setTimeout(function(){
+        res.json( {message: 'everything is all right'}
+            )
+
+    },temp*1000)
+    
+} )
 
 
 app.listen(HTTP_PORT, () => {
