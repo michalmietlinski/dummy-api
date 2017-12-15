@@ -17,3 +17,4 @@ localhost:8099/api/alwaysok
 * alwayswrong (POST/GET)
 * sometimeswrong (75% success rate) (POST/GET)
 * choosestatus/{{status}} (POST/GET)
+* wysiwyg - what you send is what you get

@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 
 const app = express();
+app.use(bodyParser.json()); // for parsing application/json
 const HTTP_PORT = 8099
 
 app.post( '/api/alwaysok', ( req, res ) => {
@@ -38,6 +39,15 @@ app.post( '/api/sometimeswrong', ( req, res ) => {
         res.status(200).json({ info: 'message' });
     }
 } )
+app.get( '/api/wysiwyg', ( req, res ) => {
+    console.log(req);
+  res.json(req.body);
+} )
+app.post( '/api/wysiwyg', ( req, res ) => {
+    console.log(req.body);
+  res.json(req.body);
+} )
+
 
 app.post( '/api/choosestatus/:status', ( req, res ) => {
 
