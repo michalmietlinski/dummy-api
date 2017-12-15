@@ -18,4 +18,5 @@ localhost:8099/api/alwaysok
 * sometimeswrong (75% success rate) (POST/GET)
 * choosestatus/{{status}} (POST/GET)
 * wysiwyg - what you send is what you get
+* mockups/{{name}} - if json provided in mockups with correct name - returns set up json
 * slow/{{time}} - time optional - if not provided(in seconds) - default is 10 s. for response
