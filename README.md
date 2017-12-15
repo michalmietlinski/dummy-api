@@ -12,7 +12,7 @@ localhost:8099/api
 Example
 localhost:8099/api/alwaysok
 
-##Methods availlable:
+## Methods availlable:
 * alwaysok (POST/GET)
 * alwayswrong (POST/GET)
 * sometimeswrong (75% success rate) (POST/GET)
