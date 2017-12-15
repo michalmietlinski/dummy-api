@@ -1,0 +1,28 @@
+{
+  "name": "dummy-api",
+  "version": "1.0.0",
+  "description": "Dummy server for API ",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "run",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://michalmietlinski@github.com/michalmietlinski/dummy-api.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Michał Mietliński",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michalmietlinski/dummy-api/issues"
+  },
+  "homepage": "https://github.com/michalmietlinski/dummy-api#readme"
+}
